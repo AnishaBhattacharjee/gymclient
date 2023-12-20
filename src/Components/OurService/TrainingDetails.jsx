@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { FetchServiceDetailsData } from '../../redux/ServiceDetailsSlice';
+import { imgUrl } from '../../api/imageUrl';
 
 const TrainingDetails = () => {
   const { serviceDetails_data } = useSelector((state) => state?.serviceDetails);
@@ -49,7 +50,7 @@ const TrainingDetails = () => {
                 <span><b> Quaterly - {serviceDetails_data?.data?.quaterly_price}</b></span>
               </div>
             </div>
-            <img className="w-50 float-left mr-4 mb-3" src={`http://localhost:7700/${serviceDetails_data?.data?.image}`} alt="Image" />
+            <img className="w-50 float-left mr-4 mb-3" src={`${imgUrl}/${serviceDetails_data?.data?.image}`} alt="Image" />
             <p><b>{serviceDetails_data?.data?.service_description}</b></p>
             
             <Link to={`/joining/${serviceDetails_data?.data?._id}`} className='btn btn-lg btn-danger px-4 py-2'>Join Now</Link>

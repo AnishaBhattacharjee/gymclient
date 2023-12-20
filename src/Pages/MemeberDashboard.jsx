@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchBookingDetails } from '../redux/DasboardSlice';
 import { Link } from 'react-router-dom';
+import { imgUrl } from '../api/imageUrl';
 // import ViewBookings from '../Components/Dashboard/ViewBookings'
 
 const MemeberDashboard = () => {
@@ -38,9 +39,9 @@ const MemeberDashboard = () => {
             <div className="col col-lg-6 mb-4 mb-lg-0">
               <div className="card mb-3" style={{ borderRadius: '1rem' }}>
                 <div className="row g-0">
-                  <div className="col-md-5 text-center text-white" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem', backgroundColor: "#E31C25" }}>
+                  <div className="col-md-5 text-center text-white pb-4" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem', backgroundColor: "#E31C25" }}>
                     {/* <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar" className="img-fluid my-5" style={{width: 80}} /> */}
-                    <img src={`http://localhost:7700/${proimg}`} alt="Avatar" className="img-fluid my-4" style={{ width: 120, height: 120, borderRadius: "100%" }} />
+                    <img src={`${imgUrl}/${proimg}`} alt="Avatar" className="img-fluid my-4" style={{ width: 120, height: 120, borderRadius: "100%" }} />
                     <h4 className='text-white'>{name}</h4>
                     <p>Your Email Id : <b>{email}</b></p>
                     <p>Your Contact No : <b>{phone}</b></p>

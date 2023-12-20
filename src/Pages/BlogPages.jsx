@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FetchBlogData } from '../redux/BlogSlice';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
+import { imgUrl } from '../api/imageUrl';
 
 const BlogPages = () => {
   const { blog_data } = useSelector((state) => state?.blog);
@@ -45,7 +46,8 @@ const BlogPages = () => {
         <div className="row">
           {currentPosts?.map((blogItem, index) => (
             <div key={index} className="col-lg-6 mb-5 blog-item">
-              <img className="img-fluid mb-4" src={`http://localhost:7700/${blogItem.image}`} alt="Image" />
+              {/* <img className="img-fluid mb-4" src={`https://corefitserver.onrender.com/${blogItem.image}`} alt="Image" /> */}
+              <img className="img-fluid mb-4" src={`${imgUrl}/${blogItem.image}`} alt="Image" />
               <div className="d-flex align-items-center mb-4">
                 <div className="d-flex flex-column align-items-center justify-content-center rounded-circle bg-primary text-white" style={{ width: 80, height: 80 }}>
                   <small>Burn</small>

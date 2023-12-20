@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { FetchBlogDetailsData } from '../../redux/BlogDetailsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { imgUrl } from '../../api/imageUrl';
 
 const BlogDetails = () => {
     const { blogDetails_data } = useSelector((state) => state?.blogDetails);
@@ -34,7 +35,7 @@ const BlogDetails = () => {
                             <div className="pl-3">
                                 <h2 className="mb-4 font-weight-bold">{blogDetails_data?.data?.title}</h2>
                                 <p style={{ fontSize: "18px" }}><b>{blogDetails_data?.data?.subtitle}</b></p>
-                                <img className="w-50 float-right ml-4 mb-3" src={`http://localhost:7700/${blogDetails_data?.data?.image}`} alt="Image" />
+                                <img className="w-50 float-right ml-4 mb-3" src={`${imgUrl}/${blogDetails_data?.data?.image}`} alt="Image" />
                                 <p>{blogDetails_data?.data?.content}</p>
                                 <Link to='/blog' className="btn btn-outline-primary mt-2 px-3"  >Back <i className="fa fa-angle-right" /></Link>
                             </div>
@@ -42,8 +43,6 @@ const BlogDetails = () => {
                     </div>
                 </div>
             </div>
-
-
         </>
     )
 }

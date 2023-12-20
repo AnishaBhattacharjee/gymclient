@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { FetchBannerData } from '../../redux/BannerSlice'
+import { imgUrl } from '../../api/imageUrl'
 
 const Carousel = () => {
 
@@ -25,7 +26,7 @@ const Carousel = () => {
                   return (
                     <>
                       <div className={`carousel-item ${index==0?'active': ''}`}>
-                        <img className="w-100" src={`http://localhost:7700/${bItem.image}`} alt="Image" />
+                        <img className="w-100" src={`${imgUrl}/${bItem.image}`} alt="Image" />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                           <h3 className="text-white text-capitalize m-0">{bItem.subtitle}</h3>
                           <h2 className="display-2 m-0 mt-2 mt-md-4 text-white font-weight-bold text-capitalize">{bItem.title}</h2>

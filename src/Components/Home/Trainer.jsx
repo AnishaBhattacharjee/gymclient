@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FetchTrainerData } from '../../redux/TrainerSlice'
+import { imgUrl } from '../../api/imageUrl'
 
 
 const Trainer = () => {
@@ -28,7 +29,7 @@ const Trainer = () => {
           return (
             <div key={index} className="col-lg-3 col-md-6 mb-5">
               <div className="card border-0 bg-secondary text-center text-white">
-                <img className="card-img-top" src={`http://localhost:7700/${tItem.image}`} alt="" />
+                <img className="card-img-top" src={`${imgUrl}/${tItem.image}`} alt="" />
                 <div className="card-social d-flex align-items-center justify-content-center">
                   {/* Your social media links */}
                 </div>

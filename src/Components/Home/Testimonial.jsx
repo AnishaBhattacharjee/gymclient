@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { FetchTestimonialData } from '../../redux/TestimonialSlice'
+import { imgUrl } from '../../api/imageUrl'
 
 const Testimonial = () => {
   const { testimonial_data } = useSelector((state) => state?.testimonial)
@@ -33,7 +34,7 @@ const Testimonial = () => {
                       <>
                       <div className={`carousel-item ${index==0?'active': ''}`}>
                   <div className="d-flex align-items-center mb-4 text-white">
-                    <img width={100} height={100} className="rounded-circle bg-dark p-2" src={`http://localhost:7700/${tItem.image}`} alt="Image" />
+                    <img width={100} height={100} className="rounded-circle bg-dark p-2" src={`${imgUrl}/${tItem.image}`} alt="Image" />
                     <div className="pl-4">
                       <h4 className="text-primary">{tItem.client_name}</h4>
                       <p className="m-0">{tItem?.service_details[0]?.service_name}</p>
