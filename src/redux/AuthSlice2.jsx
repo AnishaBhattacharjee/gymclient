@@ -97,12 +97,13 @@ export const login=createAsyncThunk("login",async(data)=>{
             toast(payload?.data?.message);
         }
      },
-     [login.rejected]: (state,action) => {
-        state.loading = false
+     [login.rejected]: (state, action) => {
+        state.loading = false;
         state.error = action.payload;
-        // console.log('kk',state.error);
+        console.error('Login Error:', action.payload); // Log the error to the console
         toast("Wrong Email or Password!");
     }
+    
     }
  })
 

@@ -64,7 +64,14 @@ function App() {
       path: '/blog',
       Component: <BlogPages />
     },
-
+    {
+      path: '/about',
+      Component: <About />
+    },
+    {
+      path: '/service',
+      Component: <Services />
+    },
 
   ]
 
@@ -75,16 +82,8 @@ function App() {
       Component: <TrainingDetails />
     },
     {
-      path: '/about',
-      Component: <About />
-    },
-    {
       path: '/joining/:id',
       Component: <JoiningForm />
-    },
-    {
-      path: '/service',
-      Component: <Services />
     },
     {
       path: '/dashboard/:memberId',
