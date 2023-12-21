@@ -41,13 +41,9 @@ const TrainingDetails = () => {
               </div>
               <div className="pl-3">
                 <h1 className="font-weight-bold mb-3">{serviceDetails_data?.data?.service_name}</h1>
-                <div className="d-flex">
+                {/* <div className="d-flex">
                   <span className="mr-2 text-muted"><i className="fa fa-user"/> Admin</span>
-                </div>
-                <span className="mr-2 text-muted"><i className="fa fa-money-bill"/> Training Fee:</span><br/>
-                <span><b>Yearly - {serviceDetails_data?.data?.yearly_price},</b></span>
-                <span><b> Half-yearly - {serviceDetails_data?.data?.halfyearly_price},</b></span>
-                <span><b> Quaterly - {serviceDetails_data?.data?.quaterly_price}</b></span>
+                </div> */}
               </div>
             </div>
             <img className="w-50 float-left mr-4 mb-3" src={`${imgUrl}/${serviceDetails_data?.data?.image}`} alt="Image" />
