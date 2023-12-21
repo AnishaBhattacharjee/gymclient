@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const BlogPagesSkeleton = () => {
   return (
     <>
-      
       <div className="container pt-5">
         <div className="row">
           {[1, 2].map((index) => (
