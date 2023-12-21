@@ -17,7 +17,7 @@ const Feature = () => {
         </div>
         <div className="col-sm-7">
           <h4 className="font-weight-bold">Videos Instruction</h4>
-          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima  erat tempor</p>
+          <p>Elevate your fitness journey with expert guidance. Access a library of instructional videos led by seasoned trainers, providing valuable insights into effective workouts, proper form, and personalized routines.</p>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ const Feature = () => {
         </div>
         <div className="col-sm-7">
           <h4 className="font-weight-bold">Training Calendar</h4>
-          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima  erat tempor</p>
+          <p>Experience a structured approach to your fitness goals. Our detailed training calendar offers a roadmap for your journey, ensuring a well-rounded and progressive workout plan tailored to your aspirations.</p>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@ const Feature = () => {
         </div>
         <div className="col-sm-7">
           <h4 className="font-weight-bold">Free Apps &amp; WiFi</h4>
-          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima  erat tempor</p>
+          <p>Stay connected seamlessly with our free apps and WiFi. Utilize cutting-edge fitness apps, track your progress, and enjoy a connected experience while working towards your health and wellness goals.</p>
         </div>
       </div>
     </div>
@@ -53,7 +53,7 @@ const Feature = () => {
         </div>
         <div className="col-sm-7">
           <h4 className="font-weight-bold">Community Support</h4>
-          <p>Sit lorem ipsum et diam elitr est dolor sed duo. Guberg sea et et lorem dolor sed est sit invidunt, dolore tempor diam ipsum takima  erat tempor</p>
+          <p>Join a vibrant community that shares your passion for fitness. Experience the power of encouragement, and a supportive network that will elevate your motivation and make your fitness journey even more rewarding.</p>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const HomeAbout = () => {
           <p>Join our online gym community – where fitness meets flexibility, and your wellness journey is just a click away</p>
         </div>
       </div>
-      <Link to="/about" className="btn btn-lg px-4 btn-outline-primary">Learn More</Link>
+      {/* <Link to="/about" className="btn btn-lg px-4 btn-outline-primary">Learn More</Link> */}
     </div>
   </div>
 </div>

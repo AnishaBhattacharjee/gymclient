@@ -23,7 +23,7 @@ const Home = () => {
                             <i className="flaticon-training display-3 text-primary mr-3" />
                             <div className>
                                 <h2 className="text-white mb-3">Progression</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci velit id libero
+                                <p>Determination echoes with every rep. Here, sweat becomes the ink that inscribes our commitment to a stronger, healthier self.
                                 </p>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ const Home = () => {
                             <i className="flaticon-weightlifting display-3 text-secondary mr-3" />
                             <div className>
                                 <h2 className="text-white mb-3">Workout</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci velit id libero
+                                <p>challenges are conquered, and each drop of determination is an investment in a better, stronger tomorrow.
                                 </p>
                             </div>
                         </div>
@@ -43,7 +43,7 @@ const Home = () => {
                             <i className="flaticon-treadmill display-3 text-primary mr-3" />
                             <div className>
                                 <h2 className="text-white mb-3">Nutrition</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu suscipit orci velit id libero
+                                <p>Every meal is a powerhouse of nutrients, sculpting strength and recovery.
                                 </p>
                             </div>
                         </div>
@@ -53,7 +53,6 @@ const Home = () => {
 
             <Feature/>
             <Category/>
-            {/* <BmiCalculate/> */}
             <Trainer/>
             <Testimonial/>
 
