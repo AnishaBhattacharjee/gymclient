@@ -7,33 +7,24 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const { redirectTo } = useSelector((state) => state?.auth2);
     const [email, setEmail] = useState();
+    const[loading,setLoading] = useState(false)
     const [password, setPassword] = useState();
-
     const dispatch = useDispatch();
     let navigate = useNavigate();
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        dispatch(login({ email, password }));
-        navigate("/");
+        setLoading(true);
+        try {
+            await dispatch(login({ email, password }));
+            navigate("/service");
+        } catch (error) {
+            console.error('Login failed:', error);
+            toast.error('Login failed');
+        }
+
+        setLoading(false);
     }
 
-    //redirect if get the token or not get the token 
-//    const check =()=>{
-//     let token = localStorage.getItem("token")
-//     // let isInLoginPage = window.location.pathname.toLowerCase() === "/login";
-
-//     if (token == null || token == undefined || token == "") {
-//         // window.location.pathname = getPathname;
-//         navigate("/login");
-        
-//     }
-// }
-
-// useEffect(() => {
-//     check()
-//     // redirectUser
-//     navigate(redirectTo)
-// }, [redirectTo])
 
     return (
         <>
@@ -55,8 +46,7 @@ const Login = () => {
                             <i className="flaticon-six-pack" />
                             <h3 className="display-4 mb-3 text-white font-weight-bold">Connect With Us To Achieve Ultimate Fitness Goal</h3>
                             <p>
-                                Lorem justo tempor sit aliquyam invidunt, amet vero ea dolor ipsum ut diam sit dolores, dolor
-                                sit eos sea sanctus erat lorem nonumy sanctus takimata. Kasd amet sit sadipscing at..
+                            CoreFit Gym offers a transformative fitness experience with expert guidance and a supportive community to help you achieve your fitness goals efficiently.
                             </p>
                         </div>
                     </div>
@@ -69,9 +59,20 @@ const Login = () => {
                                     <input type="email" className="form-control-lg mb-2" name="email" placeholder="Your Email" onChange={(e) => setEmail(e.target.value)} />
                                     <input type="password" className="form-control-lg" name="password" placeholder="Your Password" onChange={(e) => setPassword(e.target.value)} />
                                 </div>
-                                <div className="mt-2">
-                                    <button className="btn btn-md btn-outline-light px-4 mr-5">Login Here</button>
-                                </div>
+                                {loading ? (
+                    <div className="mt-2 d-flex align-items-center">
+                        <div className="loading-box mr-2">
+                            <span>Loading...</span>
+                        </div>
+                        <div className="spinner-border spinner-border-sm text-light" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="mt-2">
+                        <button className="btn btn-md btn-outline-light px-4 mr-5">Login Here</button>
+                    </div>
+                )}
                             </form>
                             <Link to="/register2" className="pt-2" style={{ textDecoration: "none" }}>Don't have an account? <b className='text-white'>Register Here</b></Link>
                         </div>

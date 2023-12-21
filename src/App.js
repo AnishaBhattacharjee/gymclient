@@ -67,12 +67,7 @@ function App() {
     {
       path: '/about',
       Component: <About />
-    },
-    {
-      path: '/service',
-      Component: <Services />
-    },
-
+    }
   ]
 
   const PrivateRouting = [
@@ -93,6 +88,10 @@ function App() {
       path: '/getblogdetails/:id',
       Component: <BlogDetails/>
     },
+    {
+      path: '/service',
+      Component: <Services />
+    }
   ]
 
   return (

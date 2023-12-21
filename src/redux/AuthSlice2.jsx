@@ -93,7 +93,7 @@ export const login=createAsyncThunk("login",async(data)=>{
             localStorage.setItem("answer", payload?.data?.data?.answer)
             localStorage.setItem("image", payload?.data?.data?.image)
             state.LogoutToggle = true
-            // state.redirectTo="/"
+            state.redirectTo="/"
             toast(payload?.data?.message);
         }
      },

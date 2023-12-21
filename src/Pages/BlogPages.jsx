@@ -4,6 +4,8 @@ import { FetchBlogData } from '../redux/BlogSlice';
 import ReactPaginate from 'react-paginate';
 import { Link } from 'react-router-dom';
 import { imgUrl } from '../api/imageUrl';
+import BlogPagesSkeleton from './BlogSkeleton';
+
 
 const BlogPages = () => {
   const { blog_data } = useSelector((state) => state?.blog);
@@ -43,27 +45,30 @@ const BlogPages = () => {
           <h4 className="text-primary font-weight-bold">Our Blog</h4>
           <h4 className="display-4 font-weight-bold">Your Ultimate Fitness Guide Book</h4>
         </div>
-        <div className="row">
-          {currentPosts?.map((blogItem, index) => (
-            <div key={index} className="col-lg-6 mb-5 blog-item">
-              {/* <img className="img-fluid mb-4" src={`https://corefitserver.onrender.com/${blogItem.image}`} alt="Image" /> */}
-              <img className="img-fluid mb-4" src={`${imgUrl}/${blogItem.image}`} alt="Image" />
-              <div className="d-flex align-items-center mb-4">
-                <div className="d-flex flex-column align-items-center justify-content-center rounded-circle bg-primary text-white" style={{ width: 80, height: 80 }}>
-                  <small>Burn</small>
-                  <strong className="text-uppercase m-0 text-white"> Build</strong>
-                  <small>Boost</small>
+        {blog_data ? (
+          <div className="row">
+            {currentPosts?.map((blogItem, index) => (
+              <div key={index} className="col-lg-6 mb-5 blog-item">
+                <img className="img-fluid mb-4" src={`${imgUrl}/${blogItem.image}`} alt="Image" />
+                <div className="d-flex align-items-center mb-4">
+                  <div className="d-flex flex-column align-items-center justify-content-center rounded-circle bg-primary text-white" style={{ width: 80, height: 80 }}>
+                    <small>Burn</small>
+                    <strong className="text-uppercase m-0 text-white"> Build</strong>
+                    <small>Boost</small>
+                  </div>
+                  <div className="pl-3">
+                    <h3 className="font-weight-bold">{blogItem.title}</h3>
+                    <p style={{ fontSize: "18px" }}><b>{blogItem.subtitle}</b></p>
+                  </div>
                 </div>
-                <div className="pl-3">
-                  <h3 className="font-weight-bold">{blogItem.title}</h3>
-                  <p style={{ fontSize: "18px" }}><b>{blogItem.subtitle}</b></p>
-                </div>
+                <p>{blogItem.content.slice(0, 100)}....</p>
+                <Link to={`/getblogdetails/${blogItem._id}`} className="btn btn-outline-primary mt-2 px-3"  >Read More <i className="fa fa-angle-right" /></Link>
               </div>
-              <p>{blogItem.content.slice(0, 100)}....</p>
-              <Link to={`/getblogdetails/${blogItem._id}`} className="btn btn-outline-primary mt-2 px-3"  >Read More <i className="fa fa-angle-right" /></Link>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <BlogPagesSkeleton />
+        )}
         <div className="col-lg-12 my-4 pb-3">
           <nav aria-label="Page navigation">
             <ReactPaginate
@@ -84,7 +89,6 @@ const BlogPages = () => {
             />
           </nav>
         </div>
-
       </div>
     </>
   );
